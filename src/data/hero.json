@@ -1,0 +1,9 @@
+{
+    "name": "Sandro",
+    "lvl": 1,
+    "exp": 0,
+    "baseExp": 100,
+    "attack": 1,
+    "defense": 1,
+    "magic": 1
+}
