@@ -89,3 +89,5 @@ export class GameState {
         return true;
     }
 }
+
+const game = new GameState();

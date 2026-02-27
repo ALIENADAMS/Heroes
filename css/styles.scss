@@ -5,6 +5,8 @@ $dark_blue: #093970;
 $silver: #b4b4b4;
 $red: #ff0000;
 $white: #fff;
+$black: #000;
+$brown: #6d2e00;
 
 //FONTS
 @font-face {
@@ -33,7 +35,7 @@ html, body
     height: 100%;
     margin: 0;
     padding: 0;
-    background: linear-gradient(90deg, $light_blue 0%, $blue 50%, $light_blue 100%);
+    background-color: #000;
 }
 
 .game_window
@@ -108,11 +110,11 @@ html, body
 {
     width: 100%;
     height: 50px;
-    background-color: $white;
-    border-bottom: 1px solid $silver;
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 0px 0px 20px 0px rgba(66, 68, 90, 1);
-    box-shadow: 0px 0px 20px 0px rgba(66, 68, 90, 1);
+    background: url('../img/top_bar.jpg');
+    background-size: cover;
+    -webkit-box-shadow: 0px 0px 20px 0px #6d2e00;
+    -moz-box-shadow: 0px 0px 20px 0px #6d2e00;
+    box-shadow: 0px 0px 20px 0px #6d2e00;
     position: relative;
     z-index: 2;
 }
@@ -143,14 +145,12 @@ html, body
 {
     font-family: 'CinzelDecorative', serif;
     font-size: 30px;
-    background: -webkit-linear-gradient($blue, $light_blue);
-    background-clip: text;
+    color: $brown;
     padding: 0;
     margin: 0;
     margin-left: 10px;
     padding-top: 5px;
-    color: $light_blue;
-    text-shadow: 0 0 5px $light_blue;
+    text-shadow: 0 0 5px $brown;
 }
 
 .top_bar-title span
@@ -268,11 +268,20 @@ html, body
     opacity: 0.6;
 }
 
+.separator
+{
+    width:10px;
+    height: calc(100% - 51px);
+    background-image: url('../img/table.jpg');
+    float: right;
+    //box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
 .main_window-right_column
 {
-    width: 20%;
+    width: calc(20% - 10px);
     height: calc(100% - 51px);
-    background-color: $white;
+    background-image: url('../img/table.jpg');
     float: right;
     -webkit-box-shadow: -12px -12px 33px -12px rgba(66, 68, 90, 1);
     -moz-box-shadow: -12px -12px 33px -12px rgba(66, 68, 90, 1);
@@ -305,7 +314,15 @@ html, body
 
 .town_box-image img
 {
-    width: 100%;
+    width: 82px;
+    cursor: pointer;
+    position: absolute;
+    transition: opacity 0.3s ease;
+}
+
+#town_button:hover
+{
+    opacity: 0;
 }
 
 .town_box-name
@@ -316,10 +333,21 @@ html, body
     padding: 5px;
 }
 
+.town_box-name a
+{
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: $dark_blue;
+}
+
+.town_box-name a:hover
+{
+    color: $blue;
+}
+
 .town_name
 {
     font-family: 'CinzelDecorative', serif;
-    color: $blue;
     font-size: 20px;
     margin: 0;
     padding: 0;
@@ -434,4 +462,34 @@ html, body
 {
     margin: 0;
     padding: 0;
+}
+
+.main_window-left_column
+{
+    width: 80%;
+    height: calc(100% - 51px);
+    float: left;
+    background-image: url('../img/table.jpg');
+}
+
+.left_column-top
+{
+    width: 100%;
+    height: 10%;
+}
+
+.left_column-center
+{
+    width: 100%;
+    height: 80%;
+    background-image: url('../img/map.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.left_column-bottom
+{
+    width: 100%;
+    height: 10%;
 }
